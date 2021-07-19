@@ -33,6 +33,6 @@ let productsScema = mongoose.Schema({
 const Products = mongoose.model('Products', productsScema)
 
 //get all products
-const getProducts = (callback, limit) => Products.find(callback).limit(limit)
+const getProducts = callback => Products.find(callback)
 
 export default getProducts

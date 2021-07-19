@@ -22,6 +22,6 @@ let usersScema = mongoose.Schema({
 const Users = mongoose.model('users', usersScema)
 
 //get all users
-const getUsers = (callback, limit) => Users.find(callback).limit(limit)
+const getUsers = callback => Users.find(callback)
 
 export default getUsers
