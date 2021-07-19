@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost:27017/node-express-rest-api', {
 mongoose.connection
 
 app.use(bodyParser.json())
+app.use('/products', productsRoutes)
 
 app.get('/', (req, res) => {
   res.send('Gauranga')
