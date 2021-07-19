@@ -35,4 +35,17 @@ const Products = mongoose.model('Products', productsScema)
 //get all products
 const getProducts = callback => Products.find(callback)
 
-export default getProducts
+const addProduct = (data, callback) => {
+  const product = new Products({
+    _id: new Date().getTime(),
+    name: data.name,
+    category: data.category,
+    description: data.description,
+    picture: data.picture,
+    price: data.price,
+    stock: data.stock,
+  })
+  product.save(callback)
+}
+
+export { getProducts, addProduct }
