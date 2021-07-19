@@ -34,4 +34,7 @@ const getToken = (data, callback) =>
     callback
   )
 
-export { getUsers, getToken }
+const validateToken = (token, callback) =>
+  Users.findOne({ token: token }, callback)
+
+export { getUsers, getToken, validateToken }

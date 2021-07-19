@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import productsRoutes from './routes/products.js'
 import usersRoutes from './routes/users.js'
 import cors from 'cors'
+import authMiddleware from './middleware/auth.js'
 
 const app = express()
 const PORT = 5000
@@ -22,6 +23,7 @@ app.use(
     allowedHeaders: ['Content-Type', 'Token'],
   })
 )
+app.use(authMiddleware)
 
 app.use('/products', productsRoutes)
 app.use('/users', usersRoutes)
