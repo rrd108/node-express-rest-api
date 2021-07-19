@@ -11,6 +11,7 @@ let usersScema = mongoose.Schema({
   password: {
     type: String,
     required: true,
+    select: false,
   },
   token: {
     type: String,
