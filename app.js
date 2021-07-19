@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import productsRoutes from './routes/products.js'
+import usersRoutes from './routes/users.js'
 
 const app = express()
 const PORT = 5000
@@ -14,6 +15,7 @@ mongoose.connection
 
 app.use(bodyParser.json())
 app.use('/products', productsRoutes)
+app.use('/users', usersRoutes)
 
 app.get('/', (req, res) => {
   res.send('Gauranga')
