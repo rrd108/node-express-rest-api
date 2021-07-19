@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import crypto from 'crypto'
 
 let usersScema = mongoose.Schema({
   _id: {
@@ -24,4 +25,13 @@ const Users = mongoose.model('users', usersScema)
 //get all users
 const getUsers = callback => Users.find(callback)
 
-export default getUsers
+const getToken = (data, callback) =>
+  Users.findOne(
+    {
+      email: data.email,
+      password: crypto.createHash('md5').update(data.password).digest('hex'),
+    },
+    callback
+  )
+
+export { getUsers, getToken }
