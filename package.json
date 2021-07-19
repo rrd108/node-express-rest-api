@@ -1,0 +1,11 @@
+{
+  "name": "express-rest-api",
+  "version": "1.0.0",
+  "description": "Example NodeJS Express REST API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rrd108",
+  "license": "ISC"
+}
