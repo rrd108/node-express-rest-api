@@ -21,7 +21,7 @@ router.post('/login', (req, res) => {
     if (user) {
       res.json(user)
     } else {
-      res.status(400).send('Authentication error')
+      res.status(401).send('Authentication error')
     }
   })
 })
