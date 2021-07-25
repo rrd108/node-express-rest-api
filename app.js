@@ -29,9 +29,9 @@ app.use('/products', productsRoutes)
 app.use('/users', usersRoutes)
 
 app.get('/', (req, res) => {
-  res.send('Gauranga')
+  res.send('Gauranga!')
 })
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`)
+  console.log(`REST API server is running at http://localhost:${PORT}`)
 })

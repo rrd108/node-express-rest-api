@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 
-let usersScema = mongoose.Schema({
+let usersSchema = mongoose.Schema({
   _id: {
     type: Number,
   },
@@ -20,10 +20,9 @@ let usersScema = mongoose.Schema({
   },
 })
 
-const Users = mongoose.model('users', usersScema)
+const Users = mongoose.model('Users', usersSchema)
 
-//get all users
-const getUsers = callback => Users.find(callback)
+const getUsers = (callback, limit) => Users.find(callback).limit(limit)
 
 const getToken = (data, callback) =>
   Users.findOne(

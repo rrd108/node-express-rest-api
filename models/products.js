@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-let productsScema = mongoose.Schema({
+let productsSchema = mongoose.Schema({
   _id: {
     type: Number,
   },
@@ -30,10 +30,9 @@ let productsScema = mongoose.Schema({
   },
 })
 
-const Products = mongoose.model('Products', productsScema)
+const Products = mongoose.model('Products', productsSchema)
 
 //get all products
-const getProducts = callback => Products.find(callback)
 
 const addProduct = (data, callback) => {
   const product = new Products({
@@ -48,4 +47,4 @@ const addProduct = (data, callback) => {
   product.save(callback)
 }
 
-export { getProducts, addProduct }
+export { addProduct, getProducts }
