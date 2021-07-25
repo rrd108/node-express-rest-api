@@ -32,7 +32,7 @@ let productsSchema = mongoose.Schema({
 
 const Products = mongoose.model('Products', productsSchema)
 
-//get all products
+const getProducts = (callback, limit) => Products.find(callback).limit(limit)
 
 const addProduct = (data, callback) => {
   const product = new Products({
